@@ -557,112 +557,39 @@ footer {
   font-size: 1rem;
   display: inline-block;
 }
-/* 全局重置（可选但推荐） */
-* {
-  box-sizing: border-box;
-}
-
-/* 导航栏基础样式 */
-.navbar {
-  background-color: #222;
-  width: 100%;
-  overflow-x: auto; /* 关键：允许横向滚动 */
-  -webkit-overflow-scrolling: touch; /* iOS 滑动更流畅 */
-  white-space: nowrap; /* 禁止换行 */
-  scrollbar-width: thin; /* Firefox 滚动条 */
-  scrollbar-color: #ffcc00 #222;
-}
-
-.navbar::-webkit-scrollbar {
-  height: 6px; /* Chrome/Safari 滚动条高度 */
-}
-
-.navbar::-webkit-scrollbar-thumb {
-  background-color: #ffcc00;
-  border-radius: 3px;
-}
-
-.navbar ul {
-  display: inline-block;
-  padding: 0;
-  margin: 0;
-  list-style: none;
-  height: 100%;
-}
-
-.navbar li {
-  display: inline-block;
-  padding: 14px 18px;
-  font-size: 1.1rem;
-  color: #ffcc00;
-  transition: background-color 0.2s ease;
-}
-
-.navbar a {
-  text-decoration: none;
-  color: #ffcc00;
-  font-weight: bold;
-  white-space: nowrap; /* 防止链接文字换行 */
-}
-
-.navbar li:hover,
-.navbar a:hover {
-  color: #fff;
-  background-color: #333;
-}
-/* 电脑端导航栏优化 */
-.navbar {
-  background-color: #222;
-  width: 100%;
-  max-width: 1200px; /* 限制最大宽度，避免拉伸 */
-  margin: 0 auto; /* 居中对齐 */
-  overflow: hidden; /* 防止内容溢出 */
-}
-
-.navbar ul {
-  display: flex;
-  justify-content: space-around; /* 均匀分布菜单项 */
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  text-align: center;
-}
-
-.navbar li {
-  padding: 16px 20px;
-  font-size: 1.1rem;
-  color: #ffcc00;
-  transition: background-color 0.3s ease;
-  border-bottom: 2px solid transparent;
-}
-
-.navbar li:hover,
-.navbar li.active {
-  background-color: #333;
-  color: #fff;
-  border-bottom: 2px solid #ffcc00;
-}
-
-.navbar a {
-  text-decoration: none;
-  color: #ffcc00;
-  font-weight: bold;
-}
-
-.navbar a:hover {
-  color: #fff;
-}
-
-/* 手机端适配 */
+/* 手机端导航栏优化 */
 @media (max-width: 768px) {
   .navbar ul {
-    flex-direction: row;
-    overflow-x: auto;
-    white-space: nowrap;
+    display: flex;
+    flex-direction: row; /* 水平排列菜单项 */
+    justify-content: space-around; /* 均匀分布空间 */
+    background-color: #222;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-align: center;
+    overflow-x: auto; /* 如果内容超出屏幕宽度，则启用滚动 */
   }
 
   .navbar li {
-    padding: 12px 15px;
+    padding: 12px 10px;
     font-size: 1rem;
+    color: #ffcc00;
+    transition: background 0.3s ease;
+    white-space: nowrap; /* 防止文字换行 */
+  }
+
+  .navbar li:hover {
+    background-color: #333;
+  }
+
+  .navbar a {
+    text-decoration: none;
+    color: #ffcc00;
+    font-weight: bold;
+  }
+
+  .navbar a:hover {
+    color: #fff;
   }
 }
