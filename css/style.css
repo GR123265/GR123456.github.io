@@ -610,4 +610,59 @@ footer {
   color: #fff;
   background-color: #333;
 }
+/* 电脑端导航栏优化 */
+.navbar {
+  background-color: #222;
+  width: 100%;
+  max-width: 1200px; /* 限制最大宽度，避免拉伸 */
+  margin: 0 auto; /* 居中对齐 */
+  overflow: hidden; /* 防止内容溢出 */
+}
 
+.navbar ul {
+  display: flex;
+  justify-content: space-around; /* 均匀分布菜单项 */
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+.navbar li {
+  padding: 16px 20px;
+  font-size: 1.1rem;
+  color: #ffcc00;
+  transition: background-color 0.3s ease;
+  border-bottom: 2px solid transparent;
+}
+
+.navbar li:hover,
+.navbar li.active {
+  background-color: #333;
+  color: #fff;
+  border-bottom: 2px solid #ffcc00;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #ffcc00;
+  font-weight: bold;
+}
+
+.navbar a:hover {
+  color: #fff;
+}
+
+/* 手机端适配 */
+@media (max-width: 768px) {
+  .navbar ul {
+    flex-direction: row;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  .navbar li {
+    padding: 12px 15px;
+    font-size: 1rem;
+  }
+}
